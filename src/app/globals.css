@@ -8,15 +8,38 @@
   font-display: swap;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
+html {
+  cursor: url('/images/cursor.png') 10 10, auto;
 }
 
-@utility font-hakobi {
-  font-family: var(--font-hakobi);
+a,
+button,
+[href],
+[role="button"] {
+  cursor: url('/images/pointer.png') 10 10, pointer;
+}
+
+input,
+textarea,
+[contenteditable],
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+li,
+td,
+th,
+label {
+  cursor: url('/images/text.png') 10 10, text;
+}
+
+.font-hakobi {
+  font-family: 'Hackobi', sans-serif !important;
 }
 
 html.lenis,

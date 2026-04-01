@@ -23,7 +23,7 @@ const navItems: NavItemProps[] = [
 const Navbar = () => {
   return (
     // Fixed container that stays on top during scroll
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[999] flex flex-col items-end gap-4 pointer-events-none">
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[999] flex flex-col items-end gap-3 pointer-events-none">
       {navItems.map((item, index) => (
         <NavItem key={index} item={item} />
       ))}

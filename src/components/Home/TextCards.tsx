@@ -8,10 +8,10 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP);
 
 const cardData = [
-  { title: "PODCASTS AND IP'S", borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
-  { title: "WTF COMMUNITY", borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
-  { title: "WTF OFFLINE", borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
-  { title: "WTF FUND", borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
+  { titleLines: ["PODCASTS", "AND IP'S"], borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
+  { titleLines: ["WTF", "COMMUNITY"], borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
+  { titleLines: ["WTF", "OFFLINE"], borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
+  { titleLines: ["WTF", "FUND"], borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
 ];
 
 type TextCardsProps = {
@@ -98,7 +98,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
           </div>
           <div ref={textRef} className="mx-auto max-w-[600px] px-4 text-center leading-[1.5] text-white/90">
             {wordsArray.map((word, i) => (
-              <span key={i} className="word inline-block mr-[0.3em] text-base md:text-xl font-light tracking-tight">
+              <span key={i} className="word inline-block mr-[0.3em] text-base md:text-lg font-light tracking-tight">
                 {word}
               </span>
             ))}
@@ -120,8 +120,13 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
             >
               <Image src="/images/logo.svg" alt="L" width={30} height={12} className="h-3 object-contain" />
               <div className="flex flex-1 flex-col items-center justify-center text-center">
-                <h2 className="mb-8 font-serif text-2xl leading-none font-bold uppercase text-[#232323]">
-                  {card.title}
+                <h2 className="mb-8 font-serif text-3xl leading-none font-thin uppercase text-[#232323]">
+                  {card.titleLines.map((line, lineIndex) => (
+                    <React.Fragment key={line}>
+                      {line}
+                      {lineIndex < card.titleLines.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
                 </h2>
                 <div className={`rounded-full ${card.buttonColor} px-6 py-2 text-[10px] font-bold text-white uppercase`}>
                   Learn More

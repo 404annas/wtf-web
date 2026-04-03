@@ -1,44 +1,45 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
-const TextAnimation = () => {
+type TextAnimationProps = {
+    masterTimeline: gsap.core.Timeline | null;
+    startLabel: string;
+};
+
+const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
     const main = useRef<HTMLDivElement | null>(null);
     const wordContainerRef = useRef<HTMLDivElement | null>(null);
 
-    useLayoutEffect(() => {
-        if (!main.current || !wordContainerRef.current) return;
+    useGSAP(() => {
+        if (!main.current || !wordContainerRef.current || !masterTimeline) return;
 
-        const ctx = gsap.context(() => {
-            const getStartX = () => window.innerWidth;
-            const getEndX = () => -wordContainerRef.current!.offsetWidth;
-            const getTravelDistance = () => getStartX() + wordContainerRef.current!.offsetWidth;
-            const getScrollDistance = () => Math.max(getTravelDistance() * 1.8, window.innerHeight * 10);
+        const getStartX = () => window.innerWidth;
+        const getEndX = () => -wordContainerRef.current!.offsetWidth;
 
-            gsap.set(wordContainerRef.current, {
-                x: getStartX(),
-                autoAlpha: 1,
-            });
+        gsap.set(wordContainerRef.current, {
+            x: getStartX(),
+            autoAlpha: 1,
+        });
 
-            gsap.to(wordContainerRef.current, {
-                x: getEndX,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: main.current,
-                    start: "top top",
-                    end: () => `+=${getScrollDistance()}`,
-                    scrub: 2.5,
-                    invalidateOnRefresh: true,
-                },
-            });
-        }, main);
+        const segment = gsap.timeline();
 
-        return () => ctx.revert();
-    }, []);
+        segment.to(wordContainerRef.current, {
+            x: getEndX(),
+            ease: "none",
+            duration: 4.5,
+        });
+
+        masterTimeline.add(segment, startLabel);
+
+        return () => {
+            masterTimeline.remove(segment);
+        };
+    }, { scope: main, dependencies: [masterTimeline, startLabel] });
 
     return (
         <div ref={main} className="relative w-full h-screen overflow-hidden bg-black flex items-center">

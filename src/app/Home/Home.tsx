@@ -1,30 +1,35 @@
 "use client";
 
-import { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Hero from '@/components/Home/Hero';
 import TextAnimation from '@/components/Home/TextAnimation';
+import TextCards from '@/components/Home/TextCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import TextCards from '@/components/Home/TextCards';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const horizontalWrapper = useRef<HTMLDivElement>(null);
+  const [masterTimeline, setMasterTimeline] = useState<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
+    if (!containerRef.current || !horizontalWrapper.current) return;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=1500%",
+        end: "+=1100%",
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
       }
     });
+
+    setMasterTimeline(tl);
 
     tl.to(horizontalWrapper.current, {
       x: "-100vw",
@@ -32,35 +37,32 @@ const Home = () => {
       duration: 1.2,
     });
 
-    // Keep the text section centered for the rest of the pinned scroll
-    tl.to({}, {
-      duration: 6.8,
+    tl.addLabel("section2");
+    tl.to({}, { duration: 4.5 });
+
+    tl.to(horizontalWrapper.current, {
+      x: "-200vw",
+      ease: "none",
+      duration: 1.2,
     });
+
+    tl.addLabel("section3");
+    tl.to({}, { duration: 4.5 });
 
   }, { scope: containerRef });
 
   return (
-    // This container is pinned and stays fixed on screen during scroll
     <div ref={containerRef} className="w-full h-screen overflow-hidden">
-      
-      {/* This wrapper holds both sections side by side */}
-      <div ref={horizontalWrapper} className="flex w-[200vw] h-full flex-row">
-        
-        {/* Section 1: Hero (Fixed 100vw) */}
+      <div ref={horizontalWrapper} className="flex w-[300vw] h-full flex-row">
         <div className="w-[100vw] h-full flex-shrink-0">
           <Hero />
         </div>
-
-        {/* Section 2: Text Animation (Fixed 100vw) */}
         <div className="w-[100vw] h-full flex-shrink-0">
-          <TextAnimation />
+          <TextAnimation masterTimeline={masterTimeline} startLabel="section2" />
         </div>
-        
-      {/* Section 3: Text Cards (Fixed 100vw) */}
         <div className="w-[100vw] h-full flex-shrink-0">
-          <TextCards />
+          <TextCards masterTimeline={masterTimeline} startLabel="section3" />
         </div>
-
       </div>
     </div>
   );

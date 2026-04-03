@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import Hero from '@/components/Home/Hero';
 import TextAnimation from '@/components/Home/TextAnimation';
 import TextCards from '@/components/Home/TextCards';
+import VerticalCards from '@/components/Home/VerticalCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -11,16 +12,16 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const horizontalSectionRef = useRef<HTMLDivElement>(null);
   const horizontalWrapper = useRef<HTMLDivElement>(null);
   const [masterTimeline, setMasterTimeline] = useState<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
-    if (!containerRef.current || !horizontalWrapper.current) return;
+    if (!horizontalSectionRef.current || !horizontalWrapper.current) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
+        trigger: horizontalSectionRef.current,
         start: "top top",
         end: "+=1100%",
         pin: true,
@@ -49,21 +50,28 @@ const Home = () => {
     tl.addLabel("section3");
     tl.to({}, { duration: 4.5 });
 
-  }, { scope: containerRef });
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+    };
+  }, { scope: horizontalSectionRef });
 
   return (
-    <div ref={containerRef} className="w-full h-screen overflow-hidden">
-      <div ref={horizontalWrapper} className="flex w-[300vw] h-full flex-row">
-        <div className="w-[100vw] h-full flex-shrink-0">
-          <Hero />
-        </div>
-        <div className="w-[100vw] h-full flex-shrink-0">
-          <TextAnimation masterTimeline={masterTimeline} startLabel="section2" />
-        </div>
-        <div className="w-[100vw] h-full flex-shrink-0">
-          <TextCards masterTimeline={masterTimeline} startLabel="section3" />
+    <div className="w-full">
+      <div ref={horizontalSectionRef} className="h-screen w-full overflow-hidden">
+        <div ref={horizontalWrapper} className="flex h-full w-[300vw] flex-row">
+          <div className="h-full w-[100vw] flex-shrink-0">
+            <Hero />
+          </div>
+          <div className="h-full w-[100vw] flex-shrink-0">
+            <TextAnimation masterTimeline={masterTimeline} startLabel="section2" />
+          </div>
+          <div className="h-full w-[100vw] flex-shrink-0">
+            <TextCards masterTimeline={masterTimeline} startLabel="section3" />
+          </div>
         </div>
       </div>
+      <VerticalCards />
     </div>
   );
 };

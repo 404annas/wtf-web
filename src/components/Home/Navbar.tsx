@@ -66,7 +66,7 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
         ref={boxRef}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className="cursor-pointer transition-shadow flex items-center justify-start pl-2 pr-10 py-0.5 min-w-[110px]"
+        className="cursor-pointer transition-shadow flex items-center border-2 border-white justify-start pl-2 pr-10 py-0.5 min-w-[110px]"
         style={{
           backgroundColor: item.color,
           transform: `rotate(${item.rotation}deg)`,

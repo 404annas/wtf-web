@@ -37,8 +37,8 @@ const Home = () => {
       duration: 1.2,
     });
 
-    tl.addLabel("section2");
-    tl.to({}, { duration: 4.5 });
+    tl.addLabel("section2", "-=0.25");
+    tl.to({}, { duration: 7.8 });
 
     tl.to(horizontalWrapper.current, {
       x: "-200vw",

@@ -19,7 +19,11 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
         if (!main.current || !wordContainerRef.current || !masterTimeline) return;
 
         const getStartX = () => window.innerWidth;
-        const getEndX = () => -wordContainerRef.current!.offsetWidth;
+        const getEndX = () => {
+            const wordWidth = wordContainerRef.current!.offsetWidth;
+            const visibleTail = window.innerWidth * 0.22;
+            return -(wordWidth - visibleTail);
+        };
 
         gsap.set(wordContainerRef.current, {
             x: getStartX(),
@@ -31,7 +35,7 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
         segment.to(wordContainerRef.current, {
             x: getEndX(),
             ease: "none",
-            duration: 4.5,
+            duration: 7.8,
         });
 
         masterTimeline.add(segment, startLabel);

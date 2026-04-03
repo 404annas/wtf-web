@@ -23,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <SmoothScrollProvider>
-        <Navbar />
-        <body className={`min-h-full flex flex-col ${poppins.className}`}>{children}</body>
-      </SmoothScrollProvider>
+      <body className={`min-h-full flex flex-col ${poppins.className}`}>
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+        </SmoothScrollProvider>
+      </body>
     </html>
   );
 }

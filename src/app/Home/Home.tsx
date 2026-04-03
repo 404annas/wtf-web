@@ -2,8 +2,8 @@
 
 import React, { useRef, useState } from 'react';
 import Hero from '@/components/Home/Hero';
-import TextAnimation from '@/components/Home/TextAnimation';
-import TextCards from '@/components/Home/TextCards';
+import TextAnimation, { TEXT_ANIMATION_DURATION } from '@/components/Home/TextAnimation';
+import TextCards, { TEXT_CARDS_DURATION } from '@/components/Home/TextCards';
 import VerticalCards from '@/components/Home/VerticalCards';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -23,7 +23,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: horizontalSectionRef.current,
         start: "top top",
-        end: "+=1100%",
+        end: "+=1600%",
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
@@ -39,7 +39,7 @@ const Home = () => {
     });
 
     tl.addLabel("section2", "-=0.25");
-    tl.to({}, { duration: 7.8 });
+    tl.to({}, { duration: TEXT_ANIMATION_DURATION });
 
     tl.to(horizontalWrapper.current, {
       x: "-200vw",
@@ -48,7 +48,16 @@ const Home = () => {
     });
 
     tl.addLabel("section3");
-    tl.to({}, { duration: 4.5 });
+    tl.to({}, { duration: TEXT_CARDS_DURATION });
+
+    tl.to(horizontalWrapper.current, {
+      x: "-300vw",
+      ease: "none",
+      duration: 1.2,
+    });
+
+    tl.addLabel("section4");
+    tl.to({}, { duration: 6 });
 
     return () => {
       tl.scrollTrigger?.kill();
@@ -59,7 +68,7 @@ const Home = () => {
   return (
     <div className="w-full">
       <div ref={horizontalSectionRef} className="h-screen w-full overflow-hidden">
-        <div ref={horizontalWrapper} className="flex h-full w-[300vw] flex-row">
+        <div ref={horizontalWrapper} className="flex h-full w-[400vw] flex-row">
           <div className="h-full w-[100vw] flex-shrink-0">
             <Hero />
           </div>
@@ -69,9 +78,11 @@ const Home = () => {
           <div className="h-full w-[100vw] flex-shrink-0">
             <TextCards masterTimeline={masterTimeline} startLabel="section3" />
           </div>
+          <div className="h-full w-[100vw] flex-shrink-0">
+            <VerticalCards masterTimeline={masterTimeline} startLabel="section4" />
+          </div>
         </div>
       </div>
-      <VerticalCards />
     </div>
   );
 };

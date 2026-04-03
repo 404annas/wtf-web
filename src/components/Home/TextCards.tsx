@@ -7,12 +7,36 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(useGSAP);
 
+const WORD_STAGGER = 0.06;
+const WORD_ENTRY_DURATION = 1.4;
+const WORDS_PAUSE_DURATION = 0.45;
+const CARD_ENTRY_STAGGER = 0.18;
+const CARD_ENTRY_DURATION = 1.25;
+const CARDS_PAUSE_DURATION = 0.6;
+const CARD_EXIT_STAGGER = 0.08;
+const CARD_EXIT_DURATION = 1.2;
+
 const cardData = [
   { titleLines: ["PODCASTS", "AND IP'S"], borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
   { titleLines: ["WTF", "COMMUNITY"], borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
   { titleLines: ["WTF", "OFFLINE"], borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
   { titleLines: ["WTF", "FUND"], borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
 ];
+
+const PARAGRAPH =
+  "What if the most important conversations in India weren’t being recorded? What if the next generation of builders needed momentum more than motivation? What if community was actually about knowing each other?";
+const WORD_COUNT = PARAGRAPH.split(" ").length;
+const CARD_COUNT = cardData.length;
+
+export const TEXT_CARDS_DURATION =
+  WORD_ENTRY_DURATION +
+  WORD_STAGGER * (WORD_COUNT - 1) +
+  WORDS_PAUSE_DURATION +
+  CARD_ENTRY_DURATION +
+  CARD_ENTRY_STAGGER * (CARD_COUNT - 1) +
+  CARDS_PAUSE_DURATION +
+  CARD_EXIT_DURATION +
+  CARD_EXIT_STAGGER * (CARD_COUNT - 1);
 
 type TextCardsProps = {
   masterTimeline: gsap.core.Timeline | null;
@@ -44,29 +68,29 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
     segment.to(words, {
       x: 0,
       opacity: 1,
-      stagger: 0.06,
-      duration: 1.4,
+      stagger: WORD_STAGGER,
+      duration: WORD_ENTRY_DURATION,
       ease: "power2.out"
     });
 
-    segment.to({}, { duration: 0.45 }); // Pause
+    segment.to({}, { duration: WORDS_PAUSE_DURATION }); // Pause
 
     // 2. Cards enter from bottom (Solid - no fade)
     segment.to(cards, {
       y: 0,
-      stagger: 0.18,
-      duration: 1.25,
+      stagger: CARD_ENTRY_STAGGER,
+      duration: CARD_ENTRY_DURATION,
       ease: "power3.out"
     });
 
-    segment.to({}, { duration: 0.6 }); // Pause
+    segment.to({}, { duration: CARDS_PAUSE_DURATION }); // Pause
 
     // 3. Cards exit to top (Solid - no fade)
     // Changed yPercent to a large y value to ensure it clears the screen height
     segment.to(cards, {
       y: -1200, 
-      stagger: 0.08,
-      duration: 1.2,
+      stagger: CARD_EXIT_STAGGER,
+      duration: CARD_EXIT_DURATION,
       ease: "power2.in"
     });
 
@@ -77,8 +101,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
     };
   }, { scope: sectionRef, dependencies: [masterTimeline, startLabel] });
 
-  const paragraph = "What if the most important conversations in India weren’t being recorded? What if the next generation of builders needed momentum more than motivation? What if community was actually about knowing each other?";
-  const wordsArray = paragraph.split(" ");
+  const wordsArray = PARAGRAPH.split(" ");
 
   return (
     <section 

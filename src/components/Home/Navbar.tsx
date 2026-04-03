@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -40,25 +41,25 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
     gsap.set(boxRef.current, { x: 50 });
   }, { scope });
 
-  const { contextSafe } = useGSAP({ scope });
-
   // Smooth slide out on hover
-  const onMouseEnter = contextSafe(() => {
+  const onMouseEnter = () => {
+    if (!boxRef.current) return;
     gsap.to(boxRef.current, {
       x: 15, // Leaves just enough inside to look attached
       duration: 0.4,
       ease: "power2.out",
     });
-  });
+  };
 
   // Smooth slide back on leave
-  const onMouseLeave = contextSafe(() => {
+  const onMouseLeave = () => {
+    if (!boxRef.current) return;
     gsap.to(boxRef.current, {
       x: 50,
       duration: 0.4,
       ease: "power2.inOut",
     });
-  });
+  };
 
   return (
     <div ref={scope} className="pointer-events-auto">
@@ -74,7 +75,7 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
           borderRadius: '0px 0 0 1px'
         }}
       >
-        <a href='/'
+        <Link href='/'
           className="text-base tracking-wide font-hakobi tracking-tighter"
           style={{ 
             color: item.textColor || 'white',
@@ -82,7 +83,7 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
           }}
         >
           {item.label}
-        </a>
+        </Link>
       </div>
     </div>
   );

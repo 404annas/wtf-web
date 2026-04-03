@@ -6,6 +6,8 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
+export const TEXT_ANIMATION_DURATION = 7.8;
+
 type TextAnimationProps = {
     masterTimeline: gsap.core.Timeline | null;
     startLabel: string;
@@ -35,7 +37,7 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
         segment.to(wordContainerRef.current, {
             x: getEndX(),
             ease: "none",
-            duration: 7.8,
+            duration: TEXT_ANIMATION_DURATION,
         });
 
         masterTimeline.add(segment, startLabel);

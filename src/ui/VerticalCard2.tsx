@@ -19,7 +19,7 @@ const cardImages = [
 
 const VerticalCard2 = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#C53B3A] flex flex-col items-center pt-4">
+    <section className="relative h-screen w-full overflow-hidden bg-[#C53B3A] flex flex-col items-center pt-10 lg:pt-4">
       {/* Background Texture Overlay */}
       <div
         aria-hidden="true"

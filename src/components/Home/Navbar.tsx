@@ -76,7 +76,7 @@ const NavItem = ({ item }: { item: NavItemProps }) => {
         }}
       >
         <Link href='/'
-          className="text-base tracking-wide font-hakobi tracking-tighter"
+          className="text-sm md:text-base tracking-wide font-hakobi tracking-tighter"
           style={{ 
             color: item.textColor || 'white',
             textTransform: 'uppercase'

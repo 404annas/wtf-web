@@ -22,18 +22,6 @@ button,
 input,
 textarea,
 [contenteditable],
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-div,
-li,
-td,
-th,
 label {
   cursor: url('/images/text.png') 10 10, text;
 }
@@ -73,8 +61,8 @@ html.lenis body {
 
 /* Fix: Make dots more prominent */
 .bg-dots {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.02) 4px, transparent 4px);
-  background-size: 30px 30px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 5px, transparent 5px);
+  background-size: 32px 32px;
   background-position: center;
 }
 

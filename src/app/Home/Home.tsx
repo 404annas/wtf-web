@@ -19,6 +19,9 @@ const Home = () => {
   useGSAP(() => {
     if (!horizontalSectionRef.current || !horizontalWrapper.current) return;
 
+    const isBelowLg = window.matchMedia('(max-width: 1023px)').matches;
+    const textCardsDuration = isBelowLg ? 0.35 : TEXT_CARDS_DURATION;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: horizontalSectionRef.current,
@@ -48,7 +51,7 @@ const Home = () => {
     });
 
     tl.addLabel("section3");
-    tl.to({}, { duration: TEXT_CARDS_DURATION });
+    tl.to({}, { duration: textCardsDuration });
 
     tl.to(horizontalWrapper.current, {
       x: "-300vw",
@@ -60,6 +63,7 @@ const Home = () => {
     tl.to({}, { duration: 6 });
 
     return () => {
+      setMasterTimeline(null);
       tl.scrollTrigger?.kill();
       tl.kill();
     };

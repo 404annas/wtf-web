@@ -117,7 +117,7 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
                     >
                         <h1 
                             ref={textRef}
-                            className="text-5xl sm:text-7xl md:text-8xl lg:text-[16vw] leading-none font-bold uppercase font-hakobi text-white tracking-wide relative"
+                            className="text-7xl sm:text-7xl md:text-8xl lg:text-[16vw] leading-none font-bold uppercase font-hakobi text-white tracking-wide relative"
                         >
                             India’s next chapter will be built by those who refused to wait.
                         </h1>

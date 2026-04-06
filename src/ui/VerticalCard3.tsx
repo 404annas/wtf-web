@@ -55,7 +55,7 @@ const VerticalCard3 = () => {
       </div>
 
       {/* 5. Bottom Marquee Section */}
-      <div className="absolute bottom-0 w-full translate-y-1/2">
+      <div className="absolute bottom-0 w-full lg:translate-y-1/2">
         {/* Label on the left */}
         <div className="absolute top-[-35px] left-6 z-20">
            <span className="text-white text-xs font-light font-serif uppercase">

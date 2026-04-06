@@ -224,7 +224,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
             {cardData.map((card, index) => (
               <article
                 key={`mobile-${index}`}
-                className={`relative flex h-[240px] w-[calc((100vw-2.75rem)/1.5)] shrink-0 flex-col justify-between rounded-[2px] border-[5px] bg-[#efe9dc] px-1 py-2 sm:h-[300px] sm:w-[calc((100vw-4rem)/1.5)] md:h-[320px] md:w-[calc((100vw-6rem-2.5rem)/2.5)] ${card.rotationClass}`}
+                className={`relative flex h-[280px] w-[calc((100vw-2.75rem)/1.5)] shrink-0 flex-col justify-between rounded-[2px] border-[5px] bg-[#efe9dc] px-1 py-2 sm:h-[300px] sm:w-[calc((100vw-4rem)/1.5)] md:h-[320px] md:w-[calc((100vw-6rem-2.5rem)/2.5)] ${card.rotationClass}`}
                 style={{
                   borderColor: card.borderColor,
                   borderStyle: 'solid',
@@ -235,7 +235,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
               >
                 <Image src="/images/logo.svg" alt="L" width={30} height={12} className="h-3 object-contain" />
                 <div className="flex flex-1 flex-col items-center justify-center text-center">
-                  <h2 className="mb-7 font-serif text-[1.2rem] leading-none font-thin uppercase text-[#232323] sm:text-[2.15rem] md:text-3xl">
+                  <h2 className="mb-7 font-serif text-[1.3rem] leading-none font-thin uppercase text-[#232323] sm:text-[2.15rem] md:text-3xl">
                     {card.titleLines.map((line, lineIndex) => (
                       <React.Fragment key={lineIndex}>
                         {line}

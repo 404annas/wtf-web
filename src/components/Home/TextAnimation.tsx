@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -54,6 +55,16 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
                 className="absolute inset-0 bg-center bg-cover bg-no-repeat opacity-20"
                 style={{ backgroundImage: "url('/images/noise-bg.webp')" }}
             />
+            <div className="absolute top-4 left-1/2 z-10 -translate-x-1/2">
+                <Image
+                    src="/images/logo.svg"
+                    alt="WTF Logo"
+                    width={90}
+                    height={40}
+                    className="h-auto w-20 sm:w-24 md:w-26"
+                    priority
+                />
+            </div>
             <section data-navbar-theme="dark" className="relative w-full flex flex-col items-center justify-center">
                 <div className="flex items-center w-full overflow-hidden">
                     <div

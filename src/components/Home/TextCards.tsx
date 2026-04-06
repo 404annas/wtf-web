@@ -10,10 +10,12 @@ gsap.registerPlugin(useGSAP);
 const WORD_STAGGER = 0.06;
 const WORD_ENTRY_DURATION = 1.4;
 const WORDS_PAUSE_DURATION = 0.45;
-const CARD_ENTRY_STAGGER = 0.18;
+// Increased stagger to make entrance one-by-one
+const CARD_ENTRY_STAGGER = 0.5; 
 const CARD_ENTRY_DURATION = 1.25;
-const CARDS_PAUSE_DURATION = 0.6;
-const CARD_EXIT_STAGGER = 0.08;
+const CARDS_PAUSE_DURATION = 1.0; // Increased pause to admire the cards
+// Increased stagger to make exit one-by-one
+const CARD_EXIT_STAGGER = 0.5; 
 const CARD_EXIT_DURATION = 1.2;
 
 const cardData = [
@@ -54,12 +56,10 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
     const cards = sectionRef.current.querySelectorAll('.card-item');
 
     // INITIAL STATE
-    // Words: Spread out to the right and hidden
     gsap.set(words, { 
         x: (i) => 900 + (i * 90),
         opacity: 0 
     });
-    // Cards: Solid opacity (1) and positioned far below the viewport
     gsap.set(cards, { y: 1000, opacity: 1 });
 
     const segment = gsap.timeline();
@@ -73,9 +73,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
       ease: "power2.out"
     });
 
-    segment.to({}, { duration: WORDS_PAUSE_DURATION }); // Pause
+    segment.to({}, { duration: WORDS_PAUSE_DURATION });
 
-    // 2. Cards enter from bottom (Solid - no fade)
+    // 2. Cards enter from bottom (Sequential)
     segment.to(cards, {
       y: 0,
       stagger: CARD_ENTRY_STAGGER,
@@ -83,10 +83,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
       ease: "power3.out"
     });
 
-    segment.to({}, { duration: CARDS_PAUSE_DURATION }); // Pause
+    segment.to({}, { duration: CARDS_PAUSE_DURATION });
 
-    // 3. Cards exit to top (Solid - no fade)
-    // Changed yPercent to a large y value to ensure it clears the screen height
+    // 3. Cards exit to top (Sequential)
     segment.to(cards, {
       y: -1200, 
       stagger: CARD_EXIT_STAGGER,
@@ -145,7 +144,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
               <div className="flex flex-1 flex-col items-center justify-center text-center">
                 <h2 className="mb-8 font-serif text-3xl leading-none font-thin uppercase text-[#232323]">
                   {card.titleLines.map((line, lineIndex) => (
-                    <React.Fragment key={line}>
+                    <React.Fragment key={lineIndex}>
                       {line}
                       {lineIndex < card.titleLines.length - 1 && <br />}
                     </React.Fragment>

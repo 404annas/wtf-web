@@ -62,7 +62,7 @@ const VerticalCard5 = () => {
 
         {/* Column 3: Members */}
         <div className="flex flex-col items-center md:items-center text-center md:text-left">
-          <h2 className="font-hakobi text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-6">
+          <h2 className="font-hakobi tetx-3xl sm:text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-6">
             1K+ MEMBERS
           </h2>
           <p className="text-black/80 text-xs md:text-sm font-regular text-center leading-normal max-w-[340px]">

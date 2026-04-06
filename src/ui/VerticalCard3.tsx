@@ -39,15 +39,15 @@ const VerticalCard3 = () => {
           WTF OFFLINE
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[50%] h-[6px] md:h-[10px] -translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[50%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
-        <p className="max-w-xl text-center text-white text-base md:text-lg font-light leading-normal mb-10 text-balance">
+        <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
           Digital is where we start. Offline is where we build. Conversations that don’t leave the room featuring 150 of the most influential minds from around the world.
         </p>
 
         {/* 4. Action Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <button className="bg-[#232323] text-white font-serif px-6 py-2 rounded-full text-xs font-light hover:opacity-90 transition-opacity duration-300">
             Learn More
           </button>

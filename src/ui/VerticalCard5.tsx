@@ -6,7 +6,7 @@ const logo = "/images/logo.svg";
 
 const VerticalCard5 = () => {
   return (
-    <section className="relative h-screen w-full bg-[#efe9dc] overflow-hidden pt-4 flex flex-col items-center">
+    <section className="relative h-screen w-full bg-[#efe9dc] overflow-hidden px-4 pt-4 flex flex-col items-center">
       {/* Background Texture Overlay (The Paper Grain) */}
       <div
         aria-hidden="true"
@@ -31,14 +31,14 @@ const VerticalCard5 = () => {
           WTF IS THE POINT?
         </h1>
         {/* Exact same thick black underline as the image */}
-        <div className="w-full max-w-[72%] h-[6px] md:h-[10px] bg-black -translate-y-4" />
+        <div className="w-full max-w-[72%] h-[6px] md:h-[10px] bg-black -translate-y-0 lg:-translate-y-4" />
       </div>
 
       {/* 3. Statistics Grid Section */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {/* Column 1: People */}
         <div className="flex flex-col items-center md:items-center text-center md:text-left">
-          <h2 className="font-hakobi text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-6">
+          <h2 className="font-hakobi text-3xl sm:text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-4 md:mb-6">
             6M+ PEOPLE
           </h2>
           <p className="text-black/80 text-xs md:text-sm font-regular text-center leading-normal max-w-[350px]">
@@ -50,7 +50,7 @@ const VerticalCard5 = () => {
 
         {/* Column 2: Grants */}
         <div className="flex flex-col items-center md:items-center text-center md:text-left">
-          <h2 className="font-hakobi text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-6">
+          <h2 className="font-hakobi text-3xl sm:text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-4 md:mb-6">
             20+ GRANTS
           </h2>
           <p className="text-black/80 text-xs md:text-sm font-regular text-center leading-normal max-w-[340px]">
@@ -61,7 +61,7 @@ const VerticalCard5 = () => {
         </div>
 
         {/* Column 3: Members */}
-        <div className="flex flex-col items-center md:items-center text-center md:text-left">
+        <div className="flex flex-col lg:block hidden items-center md:items-center text-center md:text-left">
           <h2 className="font-hakobi text-[4vw] md:text-[6vw] leading-none text-center text-[#2A2A2A] uppercase mb-6">
             1K+ MEMBERS
           </h2>

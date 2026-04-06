@@ -43,15 +43,15 @@ const VerticalCard2 = () => {
           WTF COMMUNITY
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[68%] h-[6px] md:h-[10px] -translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[68%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
-        <p className="max-w-xl text-center text-white text-base md:text-lg font-light leading-normal mb-10 text-balance">
+        <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
           WTF Off-Grid is our invite-only community of builders, creators, and independent thinkers. It’s where the right introductions, ideas, and momentum happen.
         </p>
 
         {/* 4. Action Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <button className="bg-[#efe9dc] text-[#232323] font-serif px-6 py-2 rounded-full text-xs font-light hover:bg-white transition-colors duration-300">
             Join The Community
           </button>

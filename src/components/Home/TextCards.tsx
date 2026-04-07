@@ -19,14 +19,14 @@ const CARD_EXIT_STAGGER = 0.5;
 const CARD_EXIT_DURATION = 1.2;
 
 const cardData = [
-  { titleLines: ["PODCASTS", "AND IP'S"], borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
-  { titleLines: ["WTF", "COMMUNITY"], borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
-  { titleLines: ["WTF", "OFFLINE"], borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
-  { titleLines: ["WTF", "FUND"], borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
+  { titleLines: ["We Facilitate", "Artists"], borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
+  { titleLines: ["We Scale", "Brands"], borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
+  { titleLines: ["We Produce", "Content"], borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
+  { titleLines: ["We Market", "You"], borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
 ];
 
 const PARAGRAPH =
-  "What if the most important conversations in India weren’t being recorded? What if the next generation of builders needed momentum more than motivation? What if community was actually about knowing each other?";
+  "What if creators didn’t need more content, but better positioning? What if brands weren’t struggling to grow, but struggling to be discovered? What if visibility was the only thing standing between you and success?";
 const WORD_COUNT = PARAGRAPH.split(" ").length;
 const CARD_COUNT = cardData.length;
 
@@ -150,8 +150,8 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
       
       <div className="relative z-10 mx-auto hidden w-full max-w-[1300px] flex-col items-center lg:flex">
         <div className="mb-10 text-center">
-          <div className="mb-6 -translate-y-4 flex justify-center">
-            <Image src="/images/logo.svg" alt="Logo" width={96} height={40} className="w-24 h-auto object-contain" />
+          <div className="-translate-y-6 flex justify-center">
+            <Image src="/images/prLogo2.svg" alt="Logo" width={200} height={100} className="w-70 h-auto object-contain" />
           </div>
           <div ref={textRef} className="mx-auto max-w-[600px] px-4 text-center leading-[1.5] text-white/90">
             {wordsArray.map((word, i) => (
@@ -175,9 +175,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                 backgroundBlendMode: "multiply"
               }}
             >
-              <Image src="/images/logo.svg" alt="L" width={30} height={12} className="h-3 object-contain" />
+              <img src="/images/prLogo2.svg" alt="Logo" className='w-20 object-contain -translate-y-1' />
               <div className="flex flex-1 flex-col items-center justify-center text-center">
-                <h2 className="mb-8 font-serif text-3xl leading-none font-thin uppercase text-[#232323]">
+                <h2 className="mb-8 font-serif text-2xl leading-none font-thin uppercase text-[#232323]">
                   {card.titleLines.map((line, lineIndex) => (
                     <React.Fragment key={lineIndex}>
                       {line}
@@ -189,21 +189,21 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                   Learn More
                 </div>
               </div>
-              <Image src="/images/logo.svg" alt="L" width={30} height={12} className="absolute bottom-2 right-2 h-3 w-auto object-contain" />
+              <img src="/images/prLogo2.svg" alt="Logo" className='w-20 absolute bottom-1 right-1 object-contain' />
             </article>
           ))}
         </div>
       </div>
 
       <div className="relative z-10 flex h-full w-full flex-col justify-center lg:hidden">
-        <div className="mx-auto flex w-full max-w-[900px] flex-col items-center px-4 pb-8 pt-4 text-center sm:px-6 md:px-8">
+        <div className="mx-auto flex w-full max-w-[900px] flex-col items-center px-4 pb-8 text-center sm:px-6 md:px-8">
           <div className="mb-5 flex justify-center sm:mb-6">
             <Image
-              src="/images/logo.svg"
+              src="/images/prLogo2.svg"
               alt="Logo"
               width={96}
               height={40}
-              className="h-auto w-20 object-contain sm:w-24 md:w-28"
+              className="h-auto w-35 object-contain sm:w-24 md:w-28"
             />
           </div>
           <div className="mx-auto max-w-[680px] text-sm leading-[1.55] text-white/90 sm:text-base md:text-lg">
@@ -233,9 +233,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                   backgroundBlendMode: "multiply"
                 }}
               >
-                <Image src="/images/logo.svg" alt="L" width={30} height={12} className="h-3 object-contain" />
+                <img src="/images/prLogo2.svg" alt="Logo" className='w-12 object-contain -translate-y-1'/>
                 <div className="flex flex-1 flex-col items-center justify-center text-center">
-                  <h2 className="mb-7 font-serif text-[1.3rem] leading-none font-thin uppercase text-[#232323] sm:text-[2.15rem] md:text-3xl">
+                  <h2 className="mb-7 font-serif text-[1rem] leading-none font-thin uppercase text-[#232323] sm:text-[2.15rem] md:text-3xl">
                     {card.titleLines.map((line, lineIndex) => (
                       <React.Fragment key={lineIndex}>
                         {line}
@@ -247,7 +247,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                     Learn More
                   </div>
                 </div>
-                <Image src="/images/logo.svg" alt="L" width={30} height={12} className="absolute bottom-2 right-2 h-3 w-auto object-contain" />
+                <img src="/images/prLogo2.svg" alt="Logo" className='w-12 object-contain absolute bottom-1 right-1'/>
               </article>
             ))}
           </div>

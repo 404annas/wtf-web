@@ -56,18 +56,18 @@ const Hero = () => {
       />
 
       {/* 2. Desktop Hero */}
-      <div className="relative z-10 hidden lg:block">
+      <div className="relative z-10 hidden lg:block -translate-y-4">
         <div className="relative">
           <img
             loading="lazy"
-            src="/images/prLogo.svg"
+            src="/images/prLogo2.svg"
             alt="WTF Logo"
-            className="w-[500px] lg:w-[1600px]"
+            className="w-[500px] lg:w-[850px]"
           />
         </div>
       </div>
 
-      <div className="relative z-20 hidden items-end gap-4 px-10 pt-4 lg:flex">
+      <div className="relative z-20 hidden items-end gap-4 px-10 lg:flex -translate-y-2">
         <div className="flex items-center justify-center gap-6">
           {gifs.map((gif, idx) => (
             <div 
@@ -105,9 +105,9 @@ const Hero = () => {
         <div className="mb-6">
           <img
             loading="lazy"
-            src="/images/prLogo.svg"
+            src="/images/prLogo2.svg"
             alt="WTF Logo"
-            className="w-[1000px] md:w-[1200px]"
+            className="w-[1200px] md:w-[1200px]"
           />
         </div>
 
@@ -138,9 +138,9 @@ const Hero = () => {
       </div>
 
       {/* 4. Bottom Giant Text (Half Visible) */}
-      <div className="pointer-events-none absolute bottom-[-40px] lg:bottom-[-50px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
+      <div className="pointer-events-none absolute bottom-[-40px] lg:bottom-[-55px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
         <h1 className="font-hakobi text-[8vw] leading-none text-black uppercase tracking-tight select-none text-center">
-          Cultural Engine For Young India
+          From Visibility to Influence
         </h1>
       </div>
     </section>

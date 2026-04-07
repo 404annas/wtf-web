@@ -94,13 +94,13 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
             />
             
             {/* Top Logo */}
-            <div className="absolute top-4 left-1/2 z-10 -translate-x-1/2">
+            <div className="absolute top-0 left-1/2 z-10 -translate-x-1/2">
                 <Image
-                    src="/images/logo.svg"
+                    src="/images/prLogo2.svg"
                     alt="WTF Logo"
                     width={90}
                     height={40}
-                    className="h-auto w-20 sm:w-24 md:w-26"
+                    className="h-auto w-60 sm:w-60 md:w-70"
                     priority
                 />
             </div>
@@ -119,7 +119,7 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
                             ref={textRef}
                             className="text-7xl sm:text-7xl md:text-8xl lg:text-[16vw] leading-none font-bold uppercase font-hakobi text-white tracking-wide relative"
                         >
-                            India’s next chapter will be built by those who refused to wait.
+                            we make you impossible to ignore .
                         </h1>
                     </div>
                 </div>

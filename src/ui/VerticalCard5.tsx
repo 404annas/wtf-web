@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const logo = "/images/logo.svg";
+const logo = "/images/prLogo2.svg";
 
 const VerticalCard5 = () => {
   return (
@@ -21,7 +21,7 @@ const VerticalCard5 = () => {
           alt="WTF Logo"
           width={90}
           height={40}
-          className="w-20 md:w-24 h-auto object-contain"
+          className="w-40 lg:w-70 h-auto object-contain"
         />
       </div>
 

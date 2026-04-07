@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-const logo = "/images/logo.svg";
+const logo = "/images/prLogo2.svg";
 
 const cardImages = [
   "/images/card1-1.jpg",
@@ -15,7 +15,7 @@ const cardImages = [
 
 const VerticalCard1 = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#148158] flex flex-col items-center pt-10 lg:pt-4">
+    <section className="relative h-screen w-full overflow-hidden bg-[#148158] flex flex-col items-center pt-10 lg:pt-0">
       {/* Background Texture Overlay */}
       <div
         aria-hidden="true"
@@ -29,7 +29,7 @@ const VerticalCard1 = () => {
           alt="WTF Logo" 
           width={96} 
           height={40} 
-          className="w-26 h-auto object-contain"
+          className="w-40 lg:w-70 h-auto object-contain"
         />
       </div>
 

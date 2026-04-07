@@ -94,7 +94,7 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
             />
             
             {/* Top Logo */}
-            <div className="absolute top-0 left-1/2 z-10 -translate-x-1/2">
+            <div className="absolute top-2 lg:top-0 left-1/2 z-10 -translate-x-1/2">
                 <Image
                     src="/images/prLogo2.svg"
                     alt="WTF Logo"

@@ -203,7 +203,7 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
               alt="Logo"
               width={96}
               height={40}
-              className="h-auto w-35 object-contain sm:w-24 md:w-28"
+              className="h-auto w-40 object-contain sm:w-24 md:w-28"
             />
           </div>
           <div className="mx-auto max-w-[680px] text-sm leading-[1.55] text-white/90 sm:text-base md:text-lg">

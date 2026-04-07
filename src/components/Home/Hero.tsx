@@ -47,7 +47,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative flex h-screen w-full flex-col items-center justify-start overflow-hidden bg-[#f2f0e4] pt-2">
+    <section className="relative flex h-screen w-full flex-col items-center justify-start overflow-hidden bg-[#f2f0e4]">
       {/* 1. Background Layers */}
       <div className="absolute inset-0 bg-dots opacity-100 pointer-events-none" />
       <div
@@ -60,14 +60,14 @@ const Hero = () => {
         <div className="relative">
           <img
             loading="lazy"
-            src="/images/logo.svg"
+            src="/images/prLogo.svg"
             alt="WTF Logo"
-            className="w-[500px] md:w-[500px]"
+            className="w-[500px] lg:w-[1600px]"
           />
         </div>
       </div>
 
-      <div className="relative z-20 hidden items-end gap-4 px-10 pt-8 lg:flex">
+      <div className="relative z-20 hidden items-end gap-4 px-10 pt-4 lg:flex">
         <div className="flex items-center justify-center gap-6">
           {gifs.map((gif, idx) => (
             <div 
@@ -105,9 +105,9 @@ const Hero = () => {
         <div className="mb-6">
           <img
             loading="lazy"
-            src="/images/logo.svg"
+            src="/images/prLogo.svg"
             alt="WTF Logo"
-            className="w-[220px] sm:w-[280px] md:w-[320px]"
+            className="w-[1000px] md:w-[1200px]"
           />
         </div>
 
@@ -138,7 +138,7 @@ const Hero = () => {
       </div>
 
       {/* 4. Bottom Giant Text (Half Visible) */}
-      <div className="pointer-events-none absolute bottom-[-40px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
+      <div className="pointer-events-none absolute bottom-[-40px] lg:bottom-[-50px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
         <h1 className="font-hakobi text-[8vw] leading-none text-black uppercase tracking-tight select-none text-center">
           Cultural Engine For Young India
         </h1>

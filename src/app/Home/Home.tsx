@@ -41,7 +41,7 @@ const Home = () => {
       duration: 1.2,
     });
 
-    tl.addLabel("section2", "-=0.25");
+    tl.addLabel("section2", "-=0.8");
     tl.to({}, { duration: TEXT_ANIMATION_DURATION });
 
     tl.to(horizontalWrapper.current, {

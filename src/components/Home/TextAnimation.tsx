@@ -68,13 +68,13 @@ const TextAnimation = ({ masterTimeline, startLabel }: TextAnimationProps) => {
             y: 0,
             opacity: 1,
             ease: "power2.inOut",
-            duration: 1.8, // Duration of the "fly-in" for each letter
+            duration: 1.3, // Duration of the "fly-in" for each letter
             stagger: {
                 // This distributes the entry of letters across the whole horizontal scroll
-                each: (TEXT_ANIMATION_DURATION - 2) / chars.length,
+                each: (TEXT_ANIMATION_DURATION - 1.4) / chars.length,
                 from: "start"
             }
-        }, 0.2); // Start fly-in shortly after the slide begins
+        }, 0); // Start fly-in shortly after the slide begins
 
         masterTimeline.add(segment, startLabel);
 

@@ -39,15 +39,15 @@ const VerticalCard2 = () => {
 
       {/* 2. Main Heading Section */}
       <div className="relative z-10 w-full flex flex-col items-center px-4">
-        <h1 className="font-hakobi text-[13vw] leading-none text-white uppercase text-center">
-          WTF COMMUNITY
+        <h1 className="font-hakobi text-[8vw] leading-none text-white uppercase text-center">
+          AI-Powered Creative Production
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[68%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[85%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-3 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
         <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
-          WTF Off-Grid is our invite-only community of builders, creators, and independent thinkers. It’s where the right introductions, ideas, and momentum happen.
+          Smart tools and human taste combine to produce visuals, video, and copy at scale. Faster workflows, sharper quality, and brand storytelling.
         </p>
 
         {/* 4. Action Buttons */}

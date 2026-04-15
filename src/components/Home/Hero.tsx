@@ -7,10 +7,10 @@ const Hero = () => {
   const containerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const gifs = [
-    { src: "/gifs/heroGif1.gif", color: "#C1392B" }, // Reddish
-    { src: "/gifs/heroGif2.gif", color: "#5C52A3" }, // Purple
-    { src: "/gifs/heroGif3.gif", color: "#C1392B" }, // Reddish
-    { src: "/gifs/heroGif4.gif", color: "#EB7135" }, // Orange
+    { src: "/gifs/artists1.webp", color: "#C1392B" }, // Reddish
+    { src: "/gifs/artists2.webp", color: "#5C52A3" }, // Purple
+    { src: "/gifs/artists3.webp", color: "#C1392B" }, // Reddish
+    { src: "/gifs/artists4.webp", color: "#EB7135" }, // Orange
   ];
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {

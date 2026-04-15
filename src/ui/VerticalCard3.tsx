@@ -35,15 +35,15 @@ const VerticalCard3 = () => {
 
       {/* 2. Main Heading Section */}
       <div className="relative z-10 w-full flex flex-col items-center px-4">
-        <h1 className="font-hakobi text-[13vw] leading-none text-white uppercase text-center">
-          WTF OFFLINE
+        <h1 className="font-hakobi text-[7vw] leading-none text-white uppercase text-center">
+          Multi-Platform Promotion & Visibility
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[50%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[90%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-3 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
         <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
-          Digital is where we start. Offline is where we build. Conversations that don’t leave the room featuring 150 of the most influential minds from around the world.
+          Online is where we launch. Everywhere is where we grow. Campaigns that travel across channels to reach audiences that matter most.
         </p>
 
         {/* 4. Action Buttons */}

@@ -35,15 +35,15 @@ const VerticalCard4 = () => {
 
       {/* 2. Main Heading Section */}
       <div className="relative z-10 w-full flex flex-col items-center px-4">
-        <h1 className="font-hakobi text-[13vw] leading-none text-[#2A2A2A] uppercase text-center">
-          WTF FUND
+        <h1 className="font-hakobi text-[7vw] leading-none text-[#2A2A2A] uppercase text-center">
+          Artist & Brand Development Ecosystem
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[40%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-[#2A2A2A] mb-4" />
+        <div className="w-full max-w-[90%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-3 bg-[#2A2A2A] mb-4" />
 
         {/* 3. Description Paragraph */}
         <p className="max-w-3xl text-center text-[#2A2A2A] text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
-          A grant for entrepreneurs under 25 who are building something real. Not a pitch competition. Not an accelerator. WTFund exists to back young builders early, with capital, belief, and access to people who’ve been there before.
+          A platform for creators and brands ready to grow with purpose. Not an agency. Not a one-off project. An ecosystem built to support vision with strategy, resources, and the right connections.
         </p>
 
         {/* 4. Action Buttons */}

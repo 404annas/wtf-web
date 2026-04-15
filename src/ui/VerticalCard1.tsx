@@ -35,16 +35,15 @@ const VerticalCard1 = () => {
 
       {/* 2. Main Heading Section */}
       <div className="relative z-10 w-full flex flex-col items-center px-4">
-        <h1 className="font-hakobi text-[13vw] leading-none text-white uppercase text-center">
-          Podcasts and IP&apos;s
+        <h1 className="font-hakobi text-[9vw] leading-none text-white uppercase text-center">
+          Strategic PR & Digital Growth
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[74%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[90%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
         <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
-          Long-form, unscripted conversations with the world&apos;s sharpest minds. 
-          Tune into ideas sharp enough to shift perspective.
+          Data-driven, high-impact campaigns that amplify brands across channels. Turn visibility into traction, growth, and lasting authority.
         </p>
 
         {/* 4. Action Buttons */}

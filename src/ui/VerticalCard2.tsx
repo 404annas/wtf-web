@@ -56,7 +56,7 @@ const VerticalCard2 = () => {
             Join The Community
           </button>
           <button className="bg-[#232323] text-white font-serif px-6 py-2 rounded-full text-sm font-light hover:opacity-90 transition-opacity duration-300">
-            Learn More
+            Contact Now
           </button>
         </div>
       </div>

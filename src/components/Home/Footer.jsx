@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
 
         {/* MIDDLE SECTION: Navigation */}
-        <div className="lg:col-span-3 text-center lg:pt-4">
+        {/* <div className="lg:col-span-3 text-center lg:pt-4">
           <h4 className="text-white text-4xl tracking-wide font-bold uppercase font-hakobi mb-10">
             Navigation
           </h4>
@@ -101,10 +101,10 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         {/* RIGHT SECTION: Contact Form */}
-        <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 px-4 py-6 rounded-2xl backdrop-blur-sm">
+        <div className="lg:col-span-8 bg-white/[0.03] border border-white/10 px-4 py-6 rounded-2xl backdrop-blur-sm">
           <h4 className="text-white text-4xl font-hakobi font-bold uppercase tracking-wide mb-8">
             Drop a Query
           </h4>
@@ -206,8 +206,8 @@ const Footer = () => {
       {/* Subtle Bottom Bar */}
       <div className="absolute bottom-2 lg:bottom-6 left-0 w-full px-6">
         <div className="max-w-7xl mx-auto w-full h-[1px] bg-white/5 mb-6" />
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-white text-[10px] tracking-widest uppercase ">
-          <p className="lg:block hidden">
+        <div className="max-w-7xl mx-auto flex justify-center items-center text-white text-[10px] tracking-widest uppercase ">
+          <p className="lg:block hidden text-center">
             Copyright © {new Date().getFullYear()} PR MEDIA - We&apos;re The Future |
             All Rights Reserved.
           </p>

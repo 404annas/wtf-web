@@ -18,17 +18,26 @@ const CARDS_PAUSE_DURATION = 1.0; // Increased pause to admire the cards
 const CARD_EXIT_STAGGER = 0.5; 
 const CARD_EXIT_DURATION = 1.2;
 
-const cardData = [
-  { titleLines: ["We Facilitate", "Artists"], borderColor: "#148158", buttonColor: "bg-[#148158]", rotationClass: "-rotate-[6deg]" },
-  { titleLines: ["We Scale", "Brands"], borderColor: "#B8392F", buttonColor: "bg-[#B8392F]", rotationClass: "-rotate-[2deg]" },
-  { titleLines: ["We Produce", "Content"], borderColor: "#0B468C", buttonColor: "bg-[#0B468C]", rotationClass: "rotate-[1deg]" },
-  { titleLines: ["We Market", "You"], borderColor: "#D19E30", buttonColor: "bg-[#D19E30]", rotationClass: "rotate-[5deg]" },
+const logoData = [
+  { src: "/logos/abn.jpg", alt: "ABN logo", rotationClass: "-rotate-[6deg]" },
+  { src: "/logos/ausaf.png", alt: "Ausaf logo", rotationClass: "-rotate-[3deg]" },
+  { src: "/logos/bridge2.png", alt: "Bridge logo", rotationClass: "-rotate-[1deg]" },
+  { src: "/logos/cock.png", alt: "Cock logo", rotationClass: "rotate-[2deg]" },
+  { src: "/logos/hkc.png", alt: "HKC logo", rotationClass: "rotate-[5deg]" },
+  { src: "/logos/maas.png", alt: "Maas logo", rotationClass: "-rotate-[4deg]" },
+  { src: "/logos/nescafe.jpg", alt: "Nescafe logo", rotationClass: "rotate-[3deg]" },
+  { src: "/logos/ok.jpeg", alt: "OK logo", rotationClass: "rotate-[6deg]" },
+  { src: "/logos/pepsi.png", alt: "Pepsi logo", rotationClass: "-rotate-[5deg]" },
+  { src: "/logos/sony.png", alt: "Sony logo", rotationClass: "rotate-[1deg]" },
+  { src: "/logos/T.png", alt: "T logo", rotationClass: "-rotate-[2deg]" },
+  { src: "/logos/uniliver.png", alt: "Uniliver logo", rotationClass: "rotate-[4deg]" },
+  { src: "/logos/high.png", alt: "High Life Dubai logo", rotationClass: "rotate-[0deg]", isLarge: true },
 ];
 
 const PARAGRAPH =
   "Brand's We've Worked With.";
 const WORD_COUNT = PARAGRAPH.split(" ").length;
-const CARD_COUNT = cardData.length;
+const CARD_COUNT = logoData.length;
 
 export const TEXT_CARDS_DURATION =
   WORD_ENTRY_DURATION +
@@ -149,48 +158,35 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
       />
       
       <div className="relative z-10 mx-auto hidden w-full max-w-[1300px] flex-col items-center lg:flex">
-        <div className="mb-10 text-center">
-          <div className="-translate-y-8 flex justify-center">
+        <div className="text-center">
+          <div className="-translate-y-4 flex justify-center">
             <Image src="/images/prLogo2.svg" alt="Logo" width={200} height={100} className="w-70 h-auto object-contain" />
           </div>
           <div ref={textRef} className="mx-auto w-full px-4 text-center leading-[1.5] text-white/90">
             {wordsArray.map((word, i) => (
-              <span key={i} className="word inline-block mr-[0.3em] text-base md:text-8xl font-light tracking-tight font-hakobi uppercase">
+              <span key={i} className="word inline-block mr-[0.3em] text-base md:text-7xl font-light tracking-tight font-hakobi uppercase">
                 {word}
               </span>
             ))}
           </div>
         </div>
 
-        <div className="flex w-full flex-wrap items-end justify-center gap-4 md:gap-5">
-          {cardData.map((card, index) => (
-            <article
+        <div className="flex w-full max-w-[1200px] flex-wrap items-center justify-center gap-x-8 gap-y-6 px-6 pt-6">
+          {logoData.map((logo, index) => (
+            <div
               key={index}
-              className={`card-item relative flex h-[320px] w-[230px] shrink-0 flex-col justify-between rounded-[2px] border-[5px] bg-[#efe9dc] px-1 py-2 ${card.rotationClass}`}
-              style={{ 
-                borderColor: card.borderColor,
-                borderStyle: 'solid',
-                borderWidth: '5px',
-                backgroundImage: "url('/images/noise-bg.webp')",
-                backgroundBlendMode: "multiply"
-              }}
+              className={`card-item flex shrink-0 items-center justify-center ${logo.isLarge ? "h-[140px] w-[280px]" : "h-[100px] w-[180px]"} ${logo.rotationClass}`}
             >
-              <img src="/images/prLogo2.svg" alt="Logo" className='w-20 object-contain -translate-y-1' />
-              <div className="flex flex-1 flex-col items-center justify-center text-center">
-                <h2 className="mb-8 font-serif text-2xl leading-none font-thin uppercase text-[#232323]">
-                  {card.titleLines.map((line, lineIndex) => (
-                    <React.Fragment key={lineIndex}>
-                      {line}
-                      {lineIndex < card.titleLines.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </h2>
-                <div className={`rounded-full ${card.buttonColor} px-6 py-2 text-[10px] font-bold text-white uppercase`}>
-                  Learn More
-                </div>
+              <div className="relative h-full w-full">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  sizes={logo.isLarge ? "280px" : "180px"}
+                  className="object-contain"
+                />
               </div>
-              <img src="/images/prLogo2.svg" alt="Logo" className='w-20 absolute bottom-1 right-1 object-contain' />
-            </article>
+            </div>
           ))}
         </div>
       </div>
@@ -220,35 +216,20 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
           onMouseLeave={stopScrollerDrag}
           onMouseUp={stopScrollerDrag}
         >
-          <div className="flex w-max items-end gap-3 sm:gap-4 md:gap-5 pt-4">
-            {cardData.map((card, index) => (
-              <article
+          <div className="flex w-max items-center gap-5 pt-4 sm:gap-6 md:gap-8">
+            {logoData.map((logo, index) => (
+              <div
                 key={`mobile-${index}`}
-                className={`relative flex h-[280px] w-[calc((100vw-2.75rem)/1.5)] shrink-0 flex-col justify-between rounded-[2px] border-[5px] bg-[#efe9dc] px-1 py-2 sm:h-[300px] sm:w-[calc((100vw-4rem)/1.5)] md:h-[320px] md:w-[calc((100vw-6rem-2.5rem)/2.5)] ${card.rotationClass}`}
-                style={{
-                  borderColor: card.borderColor,
-                  borderStyle: 'solid',
-                  borderWidth: '5px',
-                  backgroundImage: "url('/images/noise-bg.webp')",
-                  backgroundBlendMode: "multiply"
-                }}
+                className={`relative shrink-0 ${logo.isLarge ? "h-[96px] w-[190px] sm:h-[110px] sm:w-[220px] md:h-[124px] md:w-[260px]" : "h-[72px] w-[140px] sm:h-[82px] sm:w-[160px] md:h-[90px] md:w-[180px]"} ${logo.rotationClass}`}
               >
-                <img src="/images/prLogo2.svg" alt="Logo" className='w-12 object-contain -translate-y-1'/>
-                <div className="flex flex-1 flex-col items-center justify-center text-center">
-                  <h2 className="mb-7 font-serif text-[1rem] leading-none font-thin uppercase text-[#232323] sm:text-[2.15rem] md:text-3xl">
-                    {card.titleLines.map((line, lineIndex) => (
-                      <React.Fragment key={lineIndex}>
-                        {line}
-                        {lineIndex < card.titleLines.length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </h2>
-                  <div className={`rounded-full ${card.buttonColor} px-6 py-2 text-[10px] font-bold uppercase text-white`}>
-                    Learn More
-                  </div>
-                </div>
-                <img src="/images/prLogo2.svg" alt="Logo" className='w-12 object-contain absolute bottom-1 right-1'/>
-              </article>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  sizes={logo.isLarge ? "(max-width: 640px) 190px, (max-width: 768px) 220px, 260px" : "(max-width: 640px) 140px, (max-width: 768px) 200px, 200px"}
+                  className="object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>

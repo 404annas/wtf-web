@@ -57,8 +57,6 @@ type TextCardsProps = {
 const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
-  const mobileScrollerRef = useRef<HTMLDivElement | null>(null);
-  const dragStateRef = useRef({ isDragging: false, startX: 0, scrollLeft: 0 });
 
   useGSAP(() => {
     if (
@@ -119,32 +117,6 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
   }, { scope: sectionRef, dependencies: [masterTimeline, startLabel] });
 
   const wordsArray = PARAGRAPH.split(" ");
-
-  const handleScrollerMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
-    const scroller = mobileScrollerRef.current;
-    if (!scroller) return;
-
-    dragStateRef.current = {
-      isDragging: true,
-      startX: event.pageX,
-      scrollLeft: scroller.scrollLeft,
-    };
-  };
-
-  const handleScrollerMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const scroller = mobileScrollerRef.current;
-    const dragState = dragStateRef.current;
-
-    if (!scroller || !dragState.isDragging) return;
-
-    event.preventDefault();
-    const deltaX = event.pageX - dragState.startX;
-    scroller.scrollLeft = dragState.scrollLeft - deltaX;
-  };
-
-  const stopScrollerDrag = () => {
-    dragStateRef.current.isDragging = false;
-  };
 
   return (
     <section 
@@ -207,26 +179,18 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
           </div>
         </div>
 
-        <div
-          ref={mobileScrollerRef}
-          className="cursor-grab overflow-x-auto px-4 pb-10 sm:px-6 md:px-8 [&::-webkit-scrollbar]:hidden"
-          style={{ scrollbarWidth: 'none' }}
-          onMouseDown={handleScrollerMouseDown}
-          onMouseMove={handleScrollerMouseMove}
-          onMouseLeave={stopScrollerDrag}
-          onMouseUp={stopScrollerDrag}
-        >
-          <div className="flex w-max items-center gap-5 pt-4 sm:gap-6 md:gap-8">
+        <div className="px-4 pb-0 lg:pb-10 sm:px-6 md:px-8">
+          <div className="mx-auto grid max-w-[420px] grid-cols-3 items-center justify-items-center gap-x-3 gap-y-3 pt-4 sm:max-w-[560px] sm:grid-cols-4 sm:gap-x-4 sm:gap-y-6">
             {logoData.map((logo, index) => (
               <div
                 key={`mobile-${index}`}
-                className={`relative shrink-0 ${logo.isLarge ? "h-[96px] w-[190px] sm:h-[110px] sm:w-[220px] md:h-[124px] md:w-[260px]" : "h-[72px] w-[140px] sm:h-[82px] sm:w-[160px] md:h-[90px] md:w-[180px]"} ${logo.rotationClass}`}
+                className={`relative w-full max-w-[120px] ${logo.isLarge ? "col-span-3 h-[72px] max-w-[220px] sm:col-span-2 sm:h-[88px] sm:max-w-[240px]" : "h-[54px] sm:h-[62px]"} ${logo.rotationClass}`}
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   fill
-                  sizes={logo.isLarge ? "(max-width: 640px) 190px, (max-width: 768px) 220px, 260px" : "(max-width: 640px) 140px, (max-width: 768px) 200px, 200px"}
+                  sizes={logo.isLarge ? "(max-width: 640px) 220px, 240px" : "(max-width: 640px) 120px, 140px"}
                   className="object-contain"
                 />
               </div>

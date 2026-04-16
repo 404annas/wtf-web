@@ -9,8 +9,8 @@ const Hero = () => {
   const gifs = [
     { src: "/gifs/artists1.webp", color: "#C1392B" }, // Reddish
     { src: "/gifs/artists2.webp", color: "#5C52A3" }, // Purple
-    { src: "/gifs/artists3.webp", color: "#C1392B" }, // Reddish
     { src: "/gifs/artists4.webp", color: "#EB7135" }, // Orange
+    { src: "/gifs/artists3.webp", color: "#C1392B" }, // Reddish
   ];
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {
@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <section className="relative flex h-screen w-full flex-col items-center justify-start overflow-hidden bg-[#f2f0e4]">
       {/* 1. Background Layers */}
-      <div className="absolute inset-0 bg-dots opacity-100 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-dots opacity-100 pointer-events-none" /> */}
       <div
         className="absolute inset-0 opacity-50 pointer-events-none mix-blend-multiply"
         style={{ backgroundImage: "url('/images/noise-bg.webp')" }}
@@ -138,7 +138,7 @@ const Hero = () => {
       </div>
 
       {/* 4. Bottom Giant Text (Half Visible) */}
-      <div className="pointer-events-none absolute bottom-[-40px] lg:bottom-[-55px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
+      <div className="pointer-events-none absolute bottom-[-40px] lg:bottom-[-45px] left-0 z-0 hidden w-full whitespace-nowrap md:block">
         <h1 className="font-hakobi text-[8vw] leading-none text-black uppercase tracking-tight select-none text-center">
           From Visibility to Influence
         </h1>

@@ -34,32 +34,31 @@ const VerticalCard1 = () => {
       </div>
 
       {/* 2. Main Heading Section */}
-      <div className="relative z-10 w-full flex flex-col items-center px-4">
-        <h1 className="font-hakobi text-[9vw] leading-none text-white uppercase text-center">
+      <div className="relative z-10 w-full flex flex-col items-center px-4 pt-6">
+        <h1 className="font-hakobi text-[12vw] leading-32 text-white uppercase text-center">
           Strategic PR & Digital Growth
         </h1>
         {/* The White Underline seen in the image */}
-        <div className="w-full max-w-[90%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-4 bg-white mb-4" />
+        <div className="w-full max-w-[85%] h-[6px] md:h-[10px] -translate-y-0 lg:-translate-y-2 bg-white mb-4" />
 
         {/* 3. Description Paragraph */}
-        <p className="max-w-xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
-          Data-driven, high-impact campaigns that amplify brands across channels. Turn visibility into traction, growth, and lasting authority.
+        <p className="max-w-3xl text-center text-white text-sm sm:text-base md:text-lg font-light leading-normal mb-10 text-balance">
+          Insight-led PR and digital strategies that elevate brands across platforms. Transform attention into engagement, momentum, and long-term credibility.
         </p>
 
         {/* 4. Action Buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-          <button className="bg-[#efe9dc] text-[#232323] font-serif px-6 py-2 rounded-full text-xs font-light hover:bg-white transition-colors duration-300">
+          <button className="bg-[#efe9dc] text-[#232323] font-serif px-6 py-2 rounded-full text-sm font-light hover:bg-white transition-colors duration-300">
             Watch Latest Episodes
           </button>
-          <button className="bg-[#232323] text-white font-serif px-6 py-2 rounded-full text-xs font-light hover:opacity-90 transition-opacity duration-300">
+          <button className="bg-[#232323] text-white font-serif px-6 py-2 rounded-full text-sm font-light hover:opacity-90 transition-opacity duration-300">
             Learn More
           </button>
         </div>
       </div>
 
       {/* 5. Bottom Marquee Section */}
-      <div className="absolute bottom-0 w-full lg:translate-y-1/2">
-        {/* Label on the left */}
+      {/* <div className="absolute bottom-0 w-full lg:translate-y-1/2">
         <div className="absolute top-[-35px] left-6 z-20">
            <span className="text-white text-xs font-light font-serif uppercase">
              Some Fav&apos;s
@@ -72,7 +71,6 @@ const VerticalCard1 = () => {
           pauseOnHover={false}
           className="overflow-visible"
         >
-          {/* We repeat the array once to ensure no gaps on large screens */}
           {[...cardImages, ...cardImages].map((src, index) => (
             <div 
               key={index} 
@@ -89,7 +87,7 @@ const VerticalCard1 = () => {
             </div>
           ))}
         </Marquee>
-      </div>
+      </div> */}
     </section>
   );
 };

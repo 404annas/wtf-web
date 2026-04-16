@@ -5,6 +5,8 @@ import Hero from '@/components/Home/Hero';
 import TextAnimation, { TEXT_ANIMATION_DURATION } from '@/components/Home/TextAnimation';
 import TextCards, { TEXT_CARDS_DURATION } from '@/components/Home/TextCards';
 import VerticalCards from '@/components/Home/VerticalCards';
+import BrandWorks from '@/components/Home/BrandsWorks';
+import Footer from '@/components/Home/Footer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -26,7 +28,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: horizontalSectionRef.current,
         start: "top top",
-        end: "+=1600%",
+        end: "+=2000%",
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
@@ -62,6 +64,15 @@ const Home = () => {
     tl.addLabel("section4");
     tl.to({}, { duration: 6 });
 
+    tl.to(horizontalWrapper.current, {
+      x: "-400vw",
+      ease: "none",
+      duration: 1.2,
+    });
+
+    tl.addLabel("section5");
+    tl.to({}, { duration: textCardsDuration });
+
     return () => {
       setMasterTimeline(null);
       tl.scrollTrigger?.kill();
@@ -72,7 +83,7 @@ const Home = () => {
   return (
     <div className="w-full">
       <div ref={horizontalSectionRef} className="h-screen w-full overflow-hidden">
-        <div ref={horizontalWrapper} className="flex h-full w-[400vw] flex-row">
+        <div ref={horizontalWrapper} className="flex h-full w-[500vw] flex-row">
           <div className="h-full w-[100vw] flex-shrink-0">
             <Hero />
           </div>
@@ -85,8 +96,12 @@ const Home = () => {
           <div className="h-full w-[100vw] flex-shrink-0">
             <VerticalCards masterTimeline={masterTimeline} startLabel="section4" />
           </div>
+          <div className="h-full w-[100vw] flex-shrink-0">
+            <BrandWorks masterTimeline={masterTimeline} startLabel="section5" />
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

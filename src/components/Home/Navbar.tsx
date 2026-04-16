@@ -14,11 +14,11 @@ interface NavItemProps {
 
 const navItems: NavItemProps[] = [
   { label: 'HOME', color: '#E47334', rotation: 15 },
-  { label: 'PODCAST', color: '#008460', rotation: -15 },
-  { label: 'JOIN IN', color: '#C1392B', rotation: 15 },
-  { label: 'OFFLINE', color: '#0B3D6D', rotation: -15 },
-  { label: 'FUND', color: '#D4A017', rotation: 0, textColor: '#1a1a1a' },
-  { label: 'CAREERS', color: '#5C52A3', rotation: -15 },
+  { label: 'ABOUT', color: '#008460', rotation: -15 },
+  { label: 'SERVICES', color: '#C1392B', rotation: 15 },
+  { label: 'SUCCESS', color: '#0B3D6D', rotation: -15 },
+  { label: 'WORKS', color: '#D4A017', rotation: 0, textColor: '#1a1a1a' },
+  { label: 'CONTACT', color: '#5C52A3', rotation: -15 },
 ];
 
 const Navbar = () => {

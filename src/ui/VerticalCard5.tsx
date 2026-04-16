@@ -27,11 +27,11 @@ const VerticalCard5 = () => {
 
       {/* 2. Main Title Section */}
       <div className="relative z-10 w-full flex flex-col items-center mb-10">
-        <h1 className="font-hakobi text-[10vw] md:text-[13vw] leading-none text-black uppercase text-center">
+        <h1 className="font-hakobi text-[10vw] md:text-[12vw] leading-none text-black uppercase text-center">
           “Proven at Scale”
         </h1>
         {/* Exact same thick black underline as the image */}
-        <div className="w-full max-w-[75%] h-[6px] md:h-[10px] bg-black -translate-y-0 lg:-translate-y-8" />
+        <div className="w-full max-w-[70%] h-[6px] md:h-[10px] bg-black -translate-y-0 lg:-translate-y-8" />
       </div>
 
       {/* 3. Statistics Grid Section */}

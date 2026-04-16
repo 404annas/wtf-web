@@ -43,7 +43,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full bg-[#121212] h-screen overflow-hidden flex items-center">
+    <footer className="relative w-full bg-[#121212] lg:h-screen overflow-hidden flex items-center">
       {/* Background Texture - Kept as requested */}
       <div
         aria-hidden="true"
@@ -67,7 +67,7 @@ const Footer = () => {
               technology. We blend aesthetic precision with technical
               excellence.
             </p>
-            <div className="flex justify-center gap-2 mb-12">
+            <div className="flex justify-center gap-2 lg:mb-12">
               {[FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube].map(
                 (Icon, idx) => (
                   <a
@@ -128,7 +128,7 @@ const Footer = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-sm"
+                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-xs md:text-sm"
                 />
                 <input
                   required
@@ -138,7 +138,7 @@ const Footer = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-sm"
+                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-xs md:text-sm"
                 />
               </div>
 
@@ -148,7 +148,7 @@ const Footer = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, service: e.target.value })
                 }
-                className="w-full bg-white/5 border border-white/10 text-white/60 px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-sm appearance-none"
+                className="w-full bg-white/5 border border-white/10 text-white/60 px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-xs md:text-sm appearance-none"
               >
                 <option value="" className="bg-[#121212]">
                   Select Service
@@ -175,7 +175,7 @@ const Footer = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-sm resize-none"
+                className="w-full bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-white/30 transition-colors text-xs md:text-sm resize-none"
               />
 
               <button
@@ -185,13 +185,13 @@ const Footer = () => {
                 {status === "loading" ? (
                   <>
                     <Loader2 className="animate-spin" size={20} />
-                    <span className="uppercase tracking-wide text-2xl">
+                    <span className="uppercase tracking-wide text-xl md:text-2xl">
                       Submitting
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="uppercase tracking-wide text-2xl">
+                    <span className="uppercase tracking-wide text-xl md:text-2xl">
                       Submit Query
                     </span>
                     <SendHorizonal size={16} />
@@ -204,10 +204,10 @@ const Footer = () => {
       </div>
 
       {/* Subtle Bottom Bar */}
-      <div className="absolute bottom-6 left-0 w-full px-6">
+      <div className="absolute bottom-2 lg:bottom-6 left-0 w-full px-6">
         <div className="max-w-7xl mx-auto w-full h-[1px] bg-white/5 mb-6" />
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-white text-[10px] tracking-widest uppercase">
-          <p>
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-white text-[10px] tracking-widest uppercase ">
+          <p className="lg:block hidden">
             Copyright © {new Date().getFullYear()} WTF - We&apos;re The Future |
             All Rights Reserved.
           </p>

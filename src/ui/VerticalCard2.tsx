@@ -38,7 +38,7 @@ const VerticalCard2 = () => {
       </div>
 
       {/* 2. Main Heading Section */}
-      <div className="relative z-10 w-full flex flex-col items-center px-4 pt-6">
+      <div className="relative z-10 w-full flex flex-col items-center px-4 pt-20 lg:pt-6">
         <h1 className="font-hakobi text-[11vw] md:text-[12vw] leading-none md:leading-30 lg:leading-32 text-white uppercase text-center">
           AI-Powered Content Production
         </h1>

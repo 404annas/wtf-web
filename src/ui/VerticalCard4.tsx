@@ -34,7 +34,7 @@ const VerticalCard4 = () => {
       </div>
 
       {/* 2. Main Heading Section */}
-      <div className="relative z-10 w-full flex flex-col items-center px-4 pt-6">
+      <div className="relative z-10 w-full flex flex-col items-center px-4 pt-20 lg:pt-6">
         <h1 className="font-hakobi text-[11vw] leading-none md:leading-30 lg:leading-32 text-[#2A2A2A] uppercase text-center">
           Artist & Brand Development Ecosystem
         </h1>

@@ -180,7 +180,7 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
         </div>
 
         <div className="px-4 pb-0 lg:pb-10 sm:px-6 md:px-8">
-          <div className="mx-auto grid max-w-[420px] grid-cols-3 items-center justify-items-center gap-x-3 gap-y-3 pt-4 sm:max-w-[560px] sm:grid-cols-4 sm:gap-x-4 sm:gap-y-6">
+          <div className="mx-auto grid max-w-[420px] grid-cols-3 items-center justify-items-center gap-x-3 gap-y-6 pt-4 sm:max-w-[560px] sm:grid-cols-4 sm:gap-x-4 sm:gap-y-6">
             {logoData.map((logo, index) => (
               <div
                 key={`mobile-${index}`}

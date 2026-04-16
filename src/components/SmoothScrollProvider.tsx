@@ -4,6 +4,7 @@ import { ReactNode, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { setLenisInstance } from "@/lib/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,8 @@ export default function SmoothScrollProvider({ children }: Props) {
       smoothWheel: true,
     });
 
+    setLenisInstance(lenis);
+
     // 🔥 Connect Lenis with ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -29,6 +32,7 @@ export default function SmoothScrollProvider({ children }: Props) {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      setLenisInstance(null);
       lenis.destroy();
     };
   }, []);

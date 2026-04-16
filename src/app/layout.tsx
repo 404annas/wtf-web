@@ -11,9 +11,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "WTF - We're The Future",
+  title: "PR MEDIA | From Visibility to Influence",
   description:
-    "WTF is a student-led organization dedicated to fostering innovation, creativity, and collaboration among students. We provide a platform for students to explore their passions, develop their skills, and connect with like-minded individuals. Our mission is to empower students to become the future leaders and innovators of tomorrow.",
+    "PR MEDIA helps artists and brands become impossible to ignore through stronger positioning, content production, marketing, and visibility-led creative work.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

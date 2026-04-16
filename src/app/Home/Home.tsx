@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Hero from '@/components/Home/Hero';
 import TextAnimation, { TEXT_ANIMATION_DURATION } from '@/components/Home/TextAnimation';
 import TextCards, { TEXT_CARDS_DURATION } from '@/components/Home/TextCards';
@@ -10,12 +10,14 @@ import Footer from '@/components/Home/Footer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { setNavigationHandler, smoothScrollTo, type NavTarget } from '@/lib/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const horizontalSectionRef = useRef<HTMLDivElement>(null);
   const horizontalWrapper = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const [masterTimeline, setMasterTimeline] = useState<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
@@ -80,6 +82,55 @@ const Home = () => {
     };
   }, { scope: horizontalSectionRef });
 
+  useEffect(() => {
+    const scrollTrigger = masterTimeline?.scrollTrigger;
+    if (!scrollTrigger) return;
+
+    const scrollToTarget = (target: NavTarget) => {
+      if (target === 'products') {
+        return;
+      }
+
+      if (target === 'home') {
+        smoothScrollTo(0);
+        return;
+      }
+
+      if (target === 'contact') {
+        const footerTop = footerRef.current
+          ? footerRef.current.getBoundingClientRect().top + window.scrollY
+          : document.documentElement.scrollHeight;
+
+        smoothScrollTo(footerTop);
+        return;
+      }
+
+      let label = '';
+
+      switch (target) {
+        case 'about':
+          label = 'section3';
+          break;
+        case 'services':
+          label = 'section4';
+          break;
+        case 'works':
+          label = 'section5';
+          break;
+      }
+
+      if (label) {
+        smoothScrollTo(scrollTrigger.labelToScroll(label));
+      }
+    };
+
+    setNavigationHandler(scrollToTarget);
+
+    return () => {
+      setNavigationHandler(null);
+    };
+  }, [masterTimeline]);
+
   return (
     <div className="w-full">
       <div ref={horizontalSectionRef} className="h-screen w-full overflow-hidden">
@@ -101,7 +152,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   );
 };

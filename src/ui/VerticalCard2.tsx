@@ -39,7 +39,7 @@ const VerticalCard2 = () => {
 
       {/* 2. Main Heading Section */}
       <div className="relative z-10 w-full flex flex-col items-center px-4 pt-6">
-        <h1 className="font-hakobi text-[12vw] leading-32 text-white uppercase text-center">
+        <h1 className="font-hakobi text-[11vw] md:text-[12vw] leading-none md:leading-30 lg:leading-32 text-white uppercase text-center">
           AI-Powered Content Production
         </h1>
         {/* The White Underline seen in the image */}
@@ -51,7 +51,7 @@ const VerticalCard2 = () => {
         </p>
 
         {/* 4. Action Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+        <div className="flex md:flex-row flex-col flex-wrap justify-center gap-2 sm:gap-4">
           <button className="bg-[#efe9dc] text-[#232323] font-serif px-6 py-2 rounded-full text-sm font-light hover:bg-white transition-colors duration-300">
             Join The Community
           </button>

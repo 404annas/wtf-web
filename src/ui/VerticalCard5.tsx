@@ -27,7 +27,7 @@ const VerticalCard5 = () => {
 
       {/* 2. Main Title Section */}
       <div className="relative z-10 w-full flex flex-col items-center mb-10">
-        <h1 className="font-hakobi text-[10vw] md:text-[12vw] leading-none text-black uppercase text-center">
+        <h1 className="font-hakobi text-[11vw] sm:text-[10vw] md:text-[12vw] leading-none text-black uppercase text-center">
           “Proven at Scale”
         </h1>
         {/* Exact same thick black underline as the image */}

@@ -197,12 +197,12 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
             <Image
               src="/images/prLogo2.svg"
               alt="Logo"
-              width={96}
-              height={40}
+              width={200}
+              height={100}
               className="h-auto w-40 object-contain sm:w-24 md:w-28"
             />
           </div>
-          <div className="mx-auto max-w-[680px] text-sm leading-[1.55] text-white/90 sm:text-base md:text-lg">
+          <div className="mx-auto max-w-[680px] text-3xl uppercase font-hakobi leading-[1.55] text-white/90 sm:text-base md:text-lg">
             {PARAGRAPH}
           </div>
         </div>

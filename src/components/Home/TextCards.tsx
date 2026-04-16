@@ -4,6 +4,8 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { Mail } from 'lucide-react';
 
 gsap.registerPlugin(useGSAP);
 
@@ -185,8 +187,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                     </React.Fragment>
                   ))}
                 </h2>
-                <div className={`rounded-full ${card.buttonColor} px-6 py-2 text-[10px] font-bold text-white uppercase`}>
-                  Learn More
+                <div className={`rounded-full ${card.buttonColor} px-6 flex items-center gap-1 py-2 text-[10px] font-bold text-white uppercase`}>
+                  <FaWhatsapp size={16}/>
+                  <Mail size={16}/>
                 </div>
               </div>
               <img src="/images/prLogo2.svg" alt="Logo" className='w-20 absolute bottom-1 right-1 object-contain' />
@@ -243,8 +246,9 @@ const TextCards = ({ masterTimeline, startLabel }: TextCardsProps) => {
                       </React.Fragment>
                     ))}
                   </h2>
-                  <div className={`rounded-full ${card.buttonColor} px-6 py-2 text-[10px] font-bold uppercase text-white`}>
-                    Learn More
+                  <div className={`rounded-full ${card.buttonColor} px-6 flex items-center gap-1 py-2 text-[10px] font-bold uppercase text-white`}>
+                    <FaWhatsapp size={16}/>
+                    <Mail size={16}/>
                   </div>
                 </div>
                 <img src="/images/prLogo2.svg" alt="Logo" className='w-12 object-contain absolute bottom-1 right-1'/>

@@ -35,7 +35,7 @@ const logoData = [
 ];
 
 const PARAGRAPH =
-  "Brand's We've Worked With.";
+  "Proud To Worked With.";
 const WORD_COUNT = PARAGRAPH.split(" ").length;
 const CARD_COUNT = logoData.length;
 

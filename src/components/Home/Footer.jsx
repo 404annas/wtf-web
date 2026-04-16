@@ -208,19 +208,9 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto w-full h-[1px] bg-white/5 mb-6" />
         <div className="max-w-7xl mx-auto flex justify-between items-center text-white text-[10px] tracking-widest uppercase ">
           <p className="lg:block hidden">
-            Copyright © {new Date().getFullYear()} WTF - We&apos;re The Future |
+            Copyright © {new Date().getFullYear()} PR MEDIA - We&apos;re The Future |
             All Rights Reserved.
           </p>
-          <div className="text-[10px] uppercase tracking-wide text-white/30">
-            Developed by{" "}
-            <a
-              href="https://techxudo.com/"
-              target="_blank"
-              className="text-white font-semibold"
-            >
-              Techxudo
-            </a>
-          </div>
         </div>
       </div>
     </footer>

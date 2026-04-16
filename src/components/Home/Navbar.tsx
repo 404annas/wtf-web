@@ -16,7 +16,7 @@ const navItems: NavItemProps[] = [
   { label: 'HOME', color: '#E47334', rotation: 15 },
   { label: 'ABOUT', color: '#008460', rotation: -15 },
   { label: 'SERVICES', color: '#C1392B', rotation: 15 },
-  { label: 'SUCCESS', color: '#0B3D6D', rotation: -15 },
+  { label: 'PRODUCTS', color: '#0B3D6D', rotation: -15 },
   { label: 'WORKS', color: '#D4A017', rotation: 0, textColor: '#1a1a1a' },
   { label: 'CONTACT', color: '#5C52A3', rotation: -15 },
 ];
@@ -24,7 +24,7 @@ const navItems: NavItemProps[] = [
 const Navbar = () => {
   return (
     // Fixed container that stays on top during scroll
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[999] flex flex-col items-end gap-3 pointer-events-none">
+    <div className="fixed right-1 top-1/2 -translate-y-1/2 z-[999] flex flex-col items-end gap-3 pointer-events-none">
       {navItems.map((item, index) => (
         <NavItem key={index} item={item} />
       ))}

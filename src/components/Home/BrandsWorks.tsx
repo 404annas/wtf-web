@@ -21,9 +21,9 @@ const CARD_EXIT_DURATION = 1.2;
 const logoData = [
   { src: "/logos/abn.jpg", alt: "ABN logo", rotationClass: "-rotate-[6deg]" },
   { src: "/logos/ausaf.png", alt: "Ausaf logo", rotationClass: "-rotate-[3deg]" },
-  { src: "/logos/bridge2.png", alt: "Bridge logo", rotationClass: "-rotate-[1deg]" },
-  { src: "/logos/cock.png", alt: "Cock logo", rotationClass: "rotate-[2deg]" },
-  { src: "/logos/hkc.png", alt: "HKC logo", rotationClass: "rotate-[5deg]" },
+  { src: "/logos/social.png", alt: "Social Paksitan logo", rotationClass: "-rotate-[1deg]" },
+  { src: "/logos/cokeStudio.png", alt: "Cock Studio logo", rotationClass: "rotate-[2deg]" },
+  { src: "/logos/hkc2.png", alt: "HKC logo", rotationClass: "rotate-[5deg]" },
   { src: "/logos/maas.png", alt: "Maas logo", rotationClass: "-rotate-[4deg]" },
   { src: "/logos/nescafe.jpg", alt: "Nescafe logo", rotationClass: "rotate-[3deg]" },
   { src: "/logos/ok.jpeg", alt: "OK logo", rotationClass: "rotate-[6deg]" },
@@ -31,11 +31,12 @@ const logoData = [
   { src: "/logos/sony.png", alt: "Sony logo", rotationClass: "rotate-[1deg]" },
   { src: "/logos/T.png", alt: "T logo", rotationClass: "-rotate-[2deg]" },
   { src: "/logos/uniliver.png", alt: "Uniliver logo", rotationClass: "rotate-[4deg]" },
-  { src: "/logos/high.png", alt: "High Life Dubai logo", rotationClass: "rotate-[0deg]", isLarge: true },
+  { src: "/logos/hlb3.png", alt: "High Life Bahrain logo", rotationClass: "rotate-[0deg]", isLarge: true },
+  { src: "/logos/siren.png", alt: "Siren Music Logo", rotationClass: "rotate-[0deg]", isLarge: true },
 ];
 
 const PARAGRAPH =
-  "Proud To Worked With.";
+  "Proud To Work With.";
 const WORD_COUNT = PARAGRAPH.split(" ").length;
 const CARD_COUNT = logoData.length;
 
@@ -147,7 +148,7 @@ const BrandWorks = ({ masterTimeline, startLabel }: TextCardsProps) => {
           {logoData.map((logo, index) => (
             <div
               key={index}
-              className={`card-item flex shrink-0 items-center justify-center ${logo.isLarge ? "h-[140px] w-[280px]" : "h-[100px] w-[180px]"} ${logo.rotationClass}`}
+              className={`card-item flex shrink-0 items-center justify-center ${logo.isLarge ? "h-[140px] w-[180px]" : "h-[100px] w-[180px]"} ${logo.rotationClass}`}
             >
               <div className="relative h-full w-full">
                 <Image
